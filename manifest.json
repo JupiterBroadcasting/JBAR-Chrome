@@ -2,6 +2,11 @@
   "name": "Jupiter Broadcasting Affiliate Redirect",
   "version": "0.6",
   "description": "[BETA] Redirects links on JB affiliate sites to be tagged with the JB affiliate codes automagically!",
+  "page_action" :
+  {
+    "default_icon" : "icon128.png",
+    "default_title" : "With this purchase you are supporting Jupiter Broadcasting!"
+  },
   "icons": { "128": "icon128.png" },
   "permissions": [  "webRequest", "webRequestBlocking", 
                       "*://*.amazon.com/*",
@@ -11,7 +16,8 @@
                       "*://*.mint.com/*",
                       "*://*.bestbuy.com/*",
                       "*://*.thinkgeek.com/*",
-                      "*://*.newegg.com/*"
+                      "*://*.newegg.com/*",
+		      "tabs"
                  ], 
   "background_page": "background.html"
 }
