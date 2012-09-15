@@ -32,6 +32,10 @@
           if (tUrl.indexOf(sites[x].url) >= 0) { 
             if (tUrl.indexOf(sites[x].tag) == -1 ) {    
               r = { redirectUrl: tUrl+(tUrl.indexOf("?") == -1 ? "?" : "&")+sites[x].tag };
+              // A supported site was found
+              chrome.tabs.getSelected(null, function(tab) {
+				chrome.pageAction.show(tab.id);
+			  });
               break;
             } 
           }
