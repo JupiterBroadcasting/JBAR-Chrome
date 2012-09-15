@@ -33,8 +33,12 @@
             if (tUrl.indexOf(sites[x].tag) == -1 ) {    
               r = { redirectUrl: tUrl+(tUrl.indexOf("?") == -1 ? "?" : "&")+sites[x].tag };
               // A supported site was found
-              chrome.tabs.getSelected(null, function(tab) {
-				chrome.pageAction.show(tab.id);
+              // get the current window
+              chrome.windows.getCurrent(function (currentWindow) {
+				// get the selected tab inside the current window
+				chrome.tabs.query({active: true, windowId: currentWindow.id}, function(tabs) {
+					chrome.pageAction.show(tabs[0].id);
+				 });
 			  });
               break;
             } 
