@@ -1,6 +1,7 @@
 {
   "name": "Jupiter Broadcasting Affiliate Redirect",
   "version": "0.6",
+  "manifest_version": 2,
   "description": "[BETA] Redirects links on JB affiliate sites to be tagged with the JB affiliate codes automagically!",
   "page_action" :
   {
@@ -19,5 +20,7 @@
                       "*://*.newegg.com/*",
 		      "tabs"
                  ], 
-  "background_page": "background.html"
+	"background": {
+		"scripts": ["background.js"]
+  }
 }
