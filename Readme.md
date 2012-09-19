@@ -31,6 +31,4 @@ Want to contribute? Nice! Here's how you can:
 
 Licence
 ------------
-Undecided, will updated soon after i've done more research. Most likely something like GPL or BSD.
-
-If you have any thoughts on the matter, please feel free to express them at [this issue](https://github.com/rikai/JBAR-Chrome/issues/4). Please use that link for thoughts on both extensions, just to keep the discussion in one place.
+Licenced under the Simplified BSD Licence, see the LICENCE file for the full text.
