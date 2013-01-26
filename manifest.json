@@ -13,11 +13,14 @@
                       "*://*.amazon.com/*",
                       "*://*.amazon.co.uk/*",
                       "*://*.amazon.de/*",
+                      "*://*.amazon.ca/*",
                       "*://*.audible.com/*",
                       "*://*.mint.com/*",
                       "*://*.bestbuy.com/*",
                       "*://*.thinkgeek.com/*",
                       "*://*.newegg.com/*",
+                      "*://*.newegg.ca/*",
+                      "*://*.guitarcenter.com/*",
 		      "tabs"
                  ], 
 	"background": {

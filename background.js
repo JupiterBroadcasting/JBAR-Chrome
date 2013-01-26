@@ -7,17 +7,21 @@
     // amazonuk     // http://www.amazon.co.uk/?tag=jupitebroadc-21  
     // amazon       // http://www.amazon.com/?tag=thelinactsho-20
     // amazon       // http://www.amazon.de/?tag=jupitebroad02-21
+    // guitarcenter // http://www..guitarcenter.com/?CJAID=10453836&CJPID=4897915
     // NOTE:  Once this is finalized, you might want to STRINK/ofuscate this some how.  
 
     var sites = {
-        amazon:     { url: "amazon.com", tag:"tag=thelinactsho-20"},
-        amazonuk:   { url: "amazon.co.uk", tag:"tag=jupitebroadc-21"}, 
-        amazonde:   { url: "amazon.de", tag:"tag=jupitebroad02-21"}, 
-        audible:    { url: "audible.com", tag:"source_code=COMA0230WS012110&AID=10298646&PID=4897915"}, 
-        mint:       { url: "mint.com", tag:"PID=4897915&priorityCode=4216102399&source=cj_pfm"},
-        bestbuy:    { url: "bestbuy.com", tag:"AID=10483113&PID=4897915&ref=39&CJPID=4897915&loc=01"},
-        thinkgeek:  { url: "thinkgeek.com", tag:"cpg=cj&ref=&CJURL=&CJID=3282554"},
-        newegg:     { url: "newegg.com", tag:"nm_mc=AFC-C8Junction&cm_mmc=AFC-C8Junction-_-Branding-_-na-_-na&AID=10440554&PID=4897915"}
+        amazon:       { url: "amazon.com", tag:"tag=thelinactsho-20"},
+        amazonuk:     { url: "amazon.co.uk", tag:"tag=jupitebroadc-21"}, 
+        amazonde:     { url: "amazon.de", tag:"tag=jupitebroad02-21"}, 
+        amazonca:     { url: "amazon.ca", tag:"tag=jbcanada-20"}, 
+        audible:      { url: "audible.com", tag:"source_code=COMA0230WS012110&AID=10298646&PID=4897915"}, 
+        mint:         { url: "mint.com", tag:"PID=4897915&priorityCode=4216102399&source=cj_pfm"},
+        bestbuy:      { url: "bestbuy.com", tag:"AID=10483113&PID=4897915&ref=39&CJPID=4897915&loc=01"},
+        thinkgeek:    { url: "thinkgeek.com", tag:"cpg=cj&ref=&CJURL=&CJID=3282554"},
+        newegg:       { url: "newegg.com", tag:"nm_mc=AFC-C8Junction&cm_mmc=AFC-C8Junction-_-Branding-_-na-_-na&AID=10440554&PID=4897915"},
+        neweggca:     { url: "newegg.ca", tag:"nm_mc=AFC-C8junctionCA&cm_mmc=AFC-C8JunctionCA-_-homepage-_-na-_-na&AID=10606701&PID=4897915"}
+        guitarcenter: { url: "guitarcenter.com", tag:"CJAID=10453836&CJPID=4897915"}
     };
     
     function addTag(info) {
@@ -69,12 +73,20 @@
             "http://*.amazon.de/exec/obidos/tg/detail/*",
             "http://*.amazon.de/gp/product/*",
             "http://*.amazon.de/o/*",
+            "http://*.amazon.ca/*/dp/*",
+            "http://*.amazon.ca/dp/*",
+            "http://*.amazon.ca/exec/obidos/tg/detail/*",
+            "http://*.amazon.ca/gp/product/*",
+            "http://*.amazon.ca/o/*",
             "http://*.audible.com/*",
             "http://*.mint.com/*",
             "http://*.bestbuy.com/site/*\?id=*",
             "http://*.thinkgeek.com/*",
             "http://*.newegg.com/Product/Product.aspx\?Item=*",
-            "http://*.newegg.com/Special/ShellShocker.aspx\?*"
+            "http://*.newegg.com/Special/ShellShocker.aspx\?*",
+            "http://*.newegg.ca/Product/Product.aspx\?Item=*",
+            "http://*.newegg.ca/Special/ShellShocker.aspx\?*",
+            "http://*.guitarcenter.com/*",
     ];
   
     chrome.webRequest.onBeforeRequest.addListener(addTag, { urls: site_urls }, [ "blocking" ]); 
