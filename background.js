@@ -106,7 +106,8 @@ var configurations = {
         for ( var config in configurations) { 
           if( configurations.hasOwnProperty(config) ) {
             if (tUrl.match(configuration[config].rx) ) { 
-              if (tUrl.indexOf("tag=") == -1 ) {    
+              //gracefully acknowledge existing affiliate tags
+              if (tUrl.indexOf(config.params[0].param) == -1 ) {    
                 r = { redirectUrl: tUrl+(tUrl.indexOf("?") == -1 ? "?" : "&")+createTag(config.params) };
                 // A supported site was found
                 // get the current window
