@@ -10,18 +10,91 @@
     // guitarcenter // http://www..guitarcenter.com/?CJAID=10453836&CJPID=4897915
     // NOTE:  Once this is finalized, you might want to STRINK/ofuscate this some how.  
 
-    var sites = {
-        amazon:       { url: "amazon.com", tag:"tag=thelinactsho-20"},
-        amazonuk:     { url: "amazon.co.uk", tag:"tag=jupitebroadc-21"}, 
-        amazonde:     { url: "amazon.de", tag:"tag=jupitebroad02-21"}, 
-        amazonca:     { url: "amazon.ca", tag:"tag=jbcanada-20"}, 
-        audible:      { url: "audible.com", tag:"source_code=COMA0230WS012110&AID=10298646&PID=4897915"}, 
-        mint:         { url: "mint.com", tag:"PID=4897915&priorityCode=4216102399&source=cj_pfm"},
-        bestbuy:      { url: "bestbuy.com", tag:"AID=10483113&PID=4897915&ref=39&CJPID=4897915&loc=01"},
-        thinkgeek:    { url: "thinkgeek.com", tag:"cpg=cj&ref=&CJURL=&CJID=3282554"},
-        newegg:       { url: "newegg.com", tag:"nm_mc=AFC-C8Junction&cm_mmc=AFC-C8Junction-_-Branding-_-na-_-na&AID=10440554&PID=4897915"},
-        neweggca:     { url: "newegg.ca", tag:"nm_mc=AFC-C8junctionCA&cm_mmc=AFC-C8JunctionCA-_-homepage-_-na-_-na&AID=10606701&PID=4897915"}
-        guitarcenter: { url: "guitarcenter.com", tag:"CJAID=10453836&CJPID=4897915"}
+    var configuration = {
+        amazon: {
+            url: "amazon.com",
+            params: [
+              { param: "tag", paramValue: "thelinactsho-20" }
+            ]
+        },
+        amazonuk: {
+            url: "amazon.co.uk",
+            params: [
+                { param: "tag", paramValue: "jupitebroadc-21"} 
+            ]
+        },
+        amazonde: {
+            url: "amazon.de",
+            params: [
+                { param: "tag", paramValue: "jupitebroad02-21" }
+            ]
+        }, 
+        amazonca: {
+            url: "amazon.ca",
+            params: [
+                { param: "tag", paramValue: "jbcanada-20"}
+            ]
+        }, 
+        audible: {
+            url: "audible.com",
+            params: [
+                { param: "source_code", paramValue: "COMA0230WS012110" },
+                { param: "AID", paramValue: "10298646" },
+                { param: "PID", paramValue: "4897915"}
+            ]
+        }, 
+        mint: {
+            url: "mint.com",
+            params: [
+                { param: "PID", paramValue: "4897915" },
+                { param: "priorityCode", paramValue: "4216102399" },
+                { param: "source", paramValue: "cj_pfm" }
+            ]
+        },
+        bestbuy: {
+            url: "bestbuy.com",
+            params: [
+                { param: "AID", paramValue: "10483113" },
+                { param: "PID", paramValue: "4897915" },
+                { param: "ref", paramValue: "39" },
+                { param: "CJPID", paramValue: "4897915" },
+                { param: "loc", paramValue: "01"}
+            ]
+        },
+        thinkgeek: {
+            url: "thinkgeek.com",
+            params: [
+                { param: "cpg", paramValue: "cj" },
+                { param: "ref", paramValue: "" },
+                { param: "CJURL", paramValue: "" },
+                { param: "CJID", paramValue: "3282554"}
+            ]
+        },
+        newegg: {
+            url: "newegg.com",
+            params: [
+                { param: "nm_mc", paramValue: "AFC-C8Junction" },
+                { param: "cm_mmc", paramValue: "AFC-C8Junction-_-Branding-_-na-_-na" },
+                { param: "AID", paramValue: "10440554" },
+                { param: "PID", paramValue: "4897915" }
+            ]
+        },
+        neweggca: {
+            url: "newegg.ca",
+            params: [
+                { param: "nm_mc", paramValue: "AFC-C8junctionCA" },
+                { param: "cm_mmc", paramValue: "AFC-C8JunctionCA-_-homepage-_-na-_-na" },
+                { param: "AID", paramValue: "10606701" },
+                { param: "PID", paramValue: "4897915"}
+            ]
+        },
+        guitarcenter: {
+            url: "guitarcenter.com",
+            params: [
+                { param: "CJAID", paramValue: "10453836" },
+                { param: "CJPID", paramValue: "4897915" }
+            ]
+        }
     };
     
     function addTag(info) {
@@ -30,24 +103,36 @@
         
         console.log("Inside addTag() "); 
         
-        for (x in sites) { 
-          if (tUrl.indexOf(sites[x].url) >= 0) { 
-            if (tUrl.indexOf(sites[x].tag) == -1 ) {    
-              r = { redirectUrl: tUrl+(tUrl.indexOf("?") == -1 ? "?" : "&")+sites[x].tag };
-              // A supported site was found
-              // get the current window
-              chrome.windows.getCurrent(function (currentWindow) {
-				// get the selected tab inside the current window
-				chrome.tabs.query({active: true, windowId: currentWindow.id}, function(tabs) {
-					chrome.pageAction.show(tabs[0].id);
-				 });
-			  });
-              break;
+        for (config in configuration) { 
+          if( configuration.hasOwnProperty(config) ) {
+            if (tUrl.indexOf(configuration[config].url) >= 0) { 
+              if (tUrl.indexOf("tag=") == -1 ) {    
+                r = { redirectUrl: tUrl+(tUrl.indexOf("?") == -1 ? "?" : "&")+createTag(config.params) };
+                // A supported site was found
+                // get the current window
+                chrome.windows.getCurrent(function (currentWindow) {
+				  // get the selected tab inside the current window
+				  chrome.tabs.query({active: true, windowId: currentWindow.id}, function(tabs) {
+				  	chrome.pageAction.show(tabs[0].id);
+			      });
+			    });
+                break;
+              }
             } 
           }
         }
-        
         return r;
+    }
+
+    function createTag(parameters) {
+      var result = "";
+      for( var i = 0; i < parameters.length; i++ ) {
+        result = result + parameters[i].param + "=" + parameters[i].paramValue;
+        if( i >= 0 && i < parameters.length - 1 ) {
+            result = result + "&";
+        }
+      }
+      return result;
     }
 
   
