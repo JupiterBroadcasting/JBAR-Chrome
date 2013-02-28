@@ -103,7 +103,7 @@
         
         console.log("Inside addTag() "); 
         
-        for (config in configuration) { 
+        for ( var config in configuration) { 
           if( configuration.hasOwnProperty(config) ) {
             if (tUrl.indexOf(configuration[config].url) >= 0) { 
               if (tUrl.indexOf("tag=") == -1 ) {    
