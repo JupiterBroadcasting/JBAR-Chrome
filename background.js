@@ -10,91 +10,91 @@
     // guitarcenter // http://www..guitarcenter.com/?CJAID=10453836&CJPID=4897915
     // NOTE:  Once this is finalized, you might want to STRINK/ofuscate this some how.  
 
-    var configuration = {
-        amazon: {
-            url: "amazon.com",
-            params: [
-              { param: "tag", paramValue: "thelinactsho-20" }
-            ]
-        },
-        amazonuk: {
-            url: "amazon.co.uk",
-            params: [
-                { param: "tag", paramValue: "jupitebroadc-21"} 
-            ]
-        },
-        amazonde: {
-            url: "amazon.de",
-            params: [
-                { param: "tag", paramValue: "jupitebroad02-21" }
-            ]
-        }, 
-        amazonca: {
-            url: "amazon.ca",
-            params: [
-                { param: "tag", paramValue: "jbcanada-20"}
-            ]
-        }, 
-        audible: {
-            url: "audible.com",
-            params: [
-                { param: "source_code", paramValue: "COMA0230WS012110" },
-                { param: "AID", paramValue: "10298646" },
-                { param: "PID", paramValue: "4897915"}
-            ]
-        }, 
-        mint: {
-            url: "mint.com",
-            params: [
-                { param: "PID", paramValue: "4897915" },
-                { param: "priorityCode", paramValue: "4216102399" },
-                { param: "source", paramValue: "cj_pfm" }
-            ]
-        },
-        bestbuy: {
-            url: "bestbuy.com",
-            params: [
-                { param: "AID", paramValue: "10483113" },
-                { param: "PID", paramValue: "4897915" },
-                { param: "ref", paramValue: "39" },
-                { param: "CJPID", paramValue: "4897915" },
-                { param: "loc", paramValue: "01"}
-            ]
-        },
-        thinkgeek: {
-            url: "thinkgeek.com",
-            params: [
-                { param: "cpg", paramValue: "cj" },
-                { param: "ref", paramValue: "" },
-                { param: "CJURL", paramValue: "" },
-                { param: "CJID", paramValue: "3282554"}
-            ]
-        },
-        newegg: {
-            url: "newegg.com",
-            params: [
-                { param: "nm_mc", paramValue: "AFC-C8Junction" },
-                { param: "cm_mmc", paramValue: "AFC-C8Junction-_-Branding-_-na-_-na" },
-                { param: "AID", paramValue: "10440554" },
-                { param: "PID", paramValue: "4897915" }
-            ]
-        },
-        neweggca: {
-            url: "newegg.ca",
-            params: [
-                { param: "nm_mc", paramValue: "AFC-C8junctionCA" },
-                { param: "cm_mmc", paramValue: "AFC-C8JunctionCA-_-homepage-_-na-_-na" },
-                { param: "AID", paramValue: "10606701" },
-                { param: "PID", paramValue: "4897915"}
-            ]
-        },
-        guitarcenter: {
-            url: "guitarcenter.com",
-            params: [
-                { param: "CJAID", paramValue: "10453836" },
-                { param: "CJPID", paramValue: "4897915" }
-            ]
-        }
+var configurations = {
+      amazon : {
+        rx: /^http.*?\.amazon.com.*?(\/dp\/|obidos.tg.detail|.gp.product)/i,
+        params: [
+          { param: "tag", paramValue: "thelinactsho-20" }
+        ]
+      },
+      amazonuk : {
+       rx: /^http.*?\.amazon.co.uk.*?(\/dp\/|obidos.tg.detail|.gp.product)/i,
+       params: [
+         { param: "tag", paramValue: "jupitebroadc-21" }
+       ]
+      },
+      amazonde : { 
+        rx: /^http.*?\.amazon.de.*?(\/dp\/|obidos.tg.detail|.gp.product)/i, 
+        params: [
+          { param: "tag", paramValue: "jupitebroad02-21" }
+        ]
+      },
+      amazonca : { 
+        rx: /^http.*?\.amazon.ca.*?(\/dp\/|obidos.tg.detail|.gp.product)/i,
+        params: [
+          { param: "tag", paramValue: "jbcanada-20" }
+        ]
+      },
+      audible : { 
+        rx: /^http.*?\.audible.com/i, 
+        params: [
+          { param: "source_code", paramValue: "COMA0230WS012110" },
+          { param: "AID", paramValue: "10298646" },
+          { param: "PID", paramValue: "4897915" }
+        ]
+      },
+      mint : { 
+        rx: /^http.*?\.mint.com/i, 
+        params: [
+          { param: "PID", paramValue: "4897915" },
+          { param: "priorityCode", paramValue: "4216102399" },
+          { param: "source", paramValue: "cj_pfm" }
+        ]
+      },
+      bestbuy : {
+       rx: /^http.*?\.bestbuy.com.site.*?\?id=/i, 
+       params: [
+         { param: "AID", paramValue: "10483113" },
+         { param: "PID", paramValue: "4897915" },
+         { param: "ref", paramValue: "39" },
+         { param: "CJPID", paramValue: "4897915" },
+         { param: "loc", paramValue: "01" }
+       ]
+      },
+      thinkgeek : { 
+        rx: /^http.*?\.thinkgeek.com/i, 
+        params: [
+          { param: "cpg", paramValue: "cj" },
+          { param: "ref", paramValue: "" },
+          { param: "CJURL", paramValue: "" },
+          { param: "CJID", paramValue: "3282554"}
+        ]
+      },
+      neweggcom : {
+       rx: /^http.*?\.newegg.com.(product.product.aspx\?item=|special.shellshocker.aspx\?)/i,
+       params: [
+         { param: "nm_mc", paramValue: "AFC-C8Junction" },
+         { param: "cm_mmc", paramValue: "AFC-C8Junction-_-Branding-_-na-_-na" },
+         { param: "AID", paramValue: "10440554" },
+         { param: "PID", paramValue: "4897915" }
+       ]
+      },
+      neweggca : {
+       rx: /^http.*?\.newegg.ca.(product.product.aspx\?item=|special.shellshocker.aspx\?)/i,
+       params: [
+         { param: "nm_mc", paramValue: "AFC-C8junctionCA" },
+         { param: "cm_mmc", paramValue: "AFC-C8JunctionCA-_-homepage-_-na-_-na" },
+         { param: "AID", paramValue: "10606701" },
+         { param: "PID", paramValue: "4897915" }
+       ]
+      },
+      guitarcenter : {
+        rx: /^http.*?\.guitarcenter.com/i, 
+        params: [
+          { param: "CJAID", paramValue: "10453836" },
+          { param: "CJPID", paramValue: "4897915" }
+        ]
+      }
     };
     
     function addTag(info) {
@@ -103,9 +103,9 @@
         
         console.log("Inside addTag() "); 
         
-        for ( var config in configuration) { 
-          if( configuration.hasOwnProperty(config) ) {
-            if (tUrl.indexOf(configuration[config].url) >= 0) { 
+        for ( var config in configurations) { 
+          if( configurations.hasOwnProperty(config) ) {
+            if (tUrl.match(configuration[config].rx) ) { 
               if (tUrl.indexOf("tag=") == -1 ) {    
                 r = { redirectUrl: tUrl+(tUrl.indexOf("?") == -1 ? "?" : "&")+createTag(config.params) };
                 // A supported site was found
