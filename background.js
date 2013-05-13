@@ -105,18 +105,18 @@ var configurations = {
         
         for ( var config in configurations) { 
           if( configurations.hasOwnProperty(config) ) {
-            if (tUrl.match(configuration[config].rx) ) { 
+            if (tUrl.match(configurations[config].rx) ) { 
               //gracefully acknowledge existing affiliate tags
-              if (tUrl.indexOf(config.params[0].param) == -1 ) {    
-                r = { redirectUrl: tUrl+(tUrl.indexOf("?") == -1 ? "?" : "&")+createTag(config.params) };
+              if (tUrl.indexOf(configurations[config].params[0].param) == -1 ) {    
+                r = { redirectUrl: tUrl+(tUrl.indexOf("?") == -1 ? "?" : "&") + createTag(configurations[config].params) };
                 // A supported site was found
                 // get the current window
                 chrome.windows.getCurrent(function (currentWindow) {
-				  // get the selected tab inside the current window
-				  chrome.tabs.query({active: true, windowId: currentWindow.id}, function(tabs) {
-				  	chrome.pageAction.show(tabs[0].id);
-			      });
-			    });
+                  // get the selected tab inside the current window
+                  chrome.tabs.query({active: true, windowId: currentWindow.id}, function(tabs) {
+                    chrome.pageAction.show(tabs[0].id);
+                  });
+                });
                 break;
               }
             } 
@@ -125,11 +125,11 @@ var configurations = {
         return r;
     }
 
-    function createTag(parameters) {
+    function createTag(params) {
       var result = "";
-      for( var i = 0; i < parameters.length; i++ ) {
-        result = result + parameters[i].param + "=" + parameters[i].paramValue;
-        if( i >= 0 && i < parameters.length - 1 ) {
+      for( var i = 0; i < params.length; i++ ) {
+        result = result + params[i].param + "=" + params[i].paramValue;
+        if( i >= 0 && i < params.length - 1 ) {
             result = result + "&";
         }
       }
