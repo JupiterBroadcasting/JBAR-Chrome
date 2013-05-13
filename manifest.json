@@ -1,8 +1,8 @@
 {
   "name": "Jupiter Broadcasting Affiliate Redirect",
-  "version": "0.6",
+  "version": "0.8",
   "manifest_version": 2,
-  "description": "[BETA] Redirects links on JB affiliate sites to be tagged with the JB affiliate codes automagically!",
+  "description": "Redirects links on JB affiliate sites to be tagged with the JB affiliate codes automagically!",
   "page_action" :
   {
     "default_icon" : "icon128.png",
