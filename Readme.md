@@ -12,6 +12,7 @@ In short, what it does is apply affiliate codes to the relevant urls of a user t
 ### Contributors
 * Scootz (A major help)
 * LaMouleTresCool
+* Tuxbox 
 
 Contributing
 ------------
