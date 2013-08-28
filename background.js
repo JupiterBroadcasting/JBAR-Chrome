@@ -88,6 +88,14 @@ var configurations = {
          { param: "PID", paramValue: "4897915" }
        ]
       },
+      woot : {
+       rx: /^http.*?\.woot\.com.*?\/offers\/.*/i,
+       params: [
+         { param: "utm_campaign", paramValue: "Commission+Junction+-+10848750" },
+         { param: "utm_source", paramValue: "Commission+Junction+Publisher+-+4897915" },
+         { param: "utm_medium", paramValue: "affiliate+-+Woot%21+Logo" }
+       ]
+      },
       guitarcenter : {
         rx: /^http.*?\.guitarcenter\.com/i, 
         params: [
@@ -173,6 +181,7 @@ var configurations = {
             "http://*.newegg.ca/Product/Product.aspx\?Item=*",
             "http://*.newegg.ca/Special/ShellShocker.aspx\?*",
             "http://*.guitarcenter.com/*",
+            "http://*.woot.com/*",
     ];
   
     chrome.webRequest.onBeforeRequest.addListener(addTag, { urls: site_urls }, [ "blocking" ]); 

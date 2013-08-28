@@ -21,6 +21,7 @@
                       "*://*.newegg.com/*",
                       "*://*.newegg.ca/*",
                       "*://*.guitarcenter.com/*",
+                      "*://*.woot.com/*",
 		      "tabs"
                  ], 
 	"background": {
