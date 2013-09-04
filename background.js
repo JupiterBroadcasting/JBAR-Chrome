@@ -36,7 +36,7 @@ var configurations = {
         ]
       },
       audible : { 
-        rx: /^http.*?\.audible\.com/i, 
+        rx: /^http.*?\.audible\.com.*?\/pd.*/i, 
         params: [
           { param: "source_code", paramValue: "COMA0230WS012110" },
           { param: "AID", paramValue: "10298646" },
