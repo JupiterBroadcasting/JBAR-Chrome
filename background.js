@@ -181,7 +181,7 @@ var configurations = {
             "http://*.newegg.ca/Product/Product.aspx\?Item=*",
             "http://*.newegg.ca/Special/ShellShocker.aspx\?*",
             "http://*.guitarcenter.com/*",
-            "http://*.woot.com/*",
+            "http://*.woot.com/*"
     ];
   
     chrome.webRequest.onBeforeRequest.addListener(addTag, { urls: site_urls }, [ "blocking" ]); 
