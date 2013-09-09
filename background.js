@@ -97,7 +97,7 @@ var configurations = {
        ]
       },
       guitarcenter : {
-        rx: /^http.*?\.guitarcenter\.com/i, 
+        rx: /^http.*?\.guitarcenter\.com\/.*[a-z0-9]{9}-i[a-z0-9]{7}\.gc/i, 
         params: [
           { param: "CJAID", paramValue: "10453836" },
           { param: "CJPID", paramValue: "4897915" }
