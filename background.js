@@ -62,7 +62,7 @@ var configurations = {
        ]
       },
       thinkgeek : { 
-        rx: /^http.*?\.thinkgeek\.com/i, 
+        rx: /^http.*?\.thinkgeek\.com\/product\//i, 
         params: [
           { param: "cpg", paramValue: "cj" },
           { param: "ref", paramValue: "" },
