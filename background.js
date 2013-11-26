@@ -11,30 +11,6 @@
     // NOTE:  Once this is finalized, you might want to STRINK/ofuscate this some how.  
 
 var configurations = {
-      amazon : {
-        rx: /^http.*?\.amazon\.com.*?(\/dp\/|\/o\/asin\/|\/exec\/obidos\/tg\/detail\/|\/gp\/product\/)/i,
-        params: [
-          { param: "tag", paramValue: "thelinactsho-20" }
-        ]
-      },
-      amazonuk : {
-       rx: /^http.*?\.amazon\.co\.uk.*?(\/dp\/|\/o\/asin\/|\/exec\/obidos\/tg\/detail\/|\/gp\/product\/)/i,
-       params: [
-         { param: "tag", paramValue: "jupitebroadc-21" }
-       ]
-      },
-      amazonde : { 
-        rx: /^http.*?\.amazon\.de.*?(\/dp\/|\/o\/asin\/|\/exec\/obidos\/tg\/detail\/|\/gp\/product\/)/i,
-        params: [
-          { param: "tag", paramValue: "jupitebroad02-21" }
-        ]
-      },
-      amazonca : { 
-        rx: /^http.*?\.amazon\.ca.*?(\/dp\/|\/o\/asin\/|\/exec\/obidos\/tg\/detail\/|\/gp\/product\/)/i,
-        params: [
-          { param: "tag", paramValue: "jbcanada-20" }
-        ]
-      },
       audible : { 
         rx: /^http.*?\.audible\.com.*?\/pd\/.*/i,
         params: [
