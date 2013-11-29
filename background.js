@@ -1,14 +1,10 @@
-    //              // source URL                                     // resulting url
-    // audible      // http://www.dpbolvw.net/click-4897915-10298646  // http://www.audible.com/?source_code=COMA0230WS012110&AID=10298646&PID=4897915  
-    // mint         // http://www.tkqlhce.com/click-4897915-10789102  // https://www.mint.com/?PID=4897915&priorityCode=4216102399&source=cj_pfm
-    // bestbuy      // http://www.jdoqocy.com/click-4897915-10483113  // http://www.bestbuy.com/?AID=10483113&PID=4897915&ref=39&CJPID=4897915&loc=01
-    // thinkgeek    // http://www.kqzyfj.com/click-4897915-10784884   // http://www.thinkgeek.com/index.shtml?cpg=cj&ref=&CJURL=&CJID=3282554
-    // newegg       // http://www.dpbolvw.net/click-4897915-10440554  // http://www.newegg.com/index.aspx?nm_mc=AFC-C8Junction&cm_mmc=AFC-C8Junction-_-Branding-_-na-_-na&AID=10440554&PID=4897915
-    // amazonuk     // http://www.amazon.co.uk/?tag=jupitebroadc-21  
-    // amazon       // http://www.amazon.com/?tag=thelinactsho-20
-    // amazon       // http://www.amazon.de/?tag=jupitebroad02-21
-    // guitarcenter // http://www..guitarcenter.com/?CJAID=10453836&CJPID=4897915
-    // NOTE:  Once this is finalized, you might want to STRINK/ofuscate this some how.  
+    //              // resulting url
+    // audible      // http://www.audible.com/?source_code=COMA0230WS012110&AID=10298646&PID=4897915  
+    // mint         // https://www.mint.com/?PID=4897915&priorityCode=4216102399&source=cj_pfm
+    // bestbuy      // http://www.bestbuy.com/?AID=10483113&PID=4897915&ref=39&CJPID=4897915&loc=01
+    // thinkgeek    // http://www.thinkgeek.com/index.shtml?cpg=cj&ref=&CJURL=&CJID=3282554
+    // newegg       // http://www.newegg.com/index.aspx?nm_mc=AFC-C8Junction&cm_mmc=AFC-C8Junction-_-Branding-_-na-_-na&AID=10440554&PID=4897915
+    // guitarcenter // http://www.guitarcenter.com/?CJAID=10453836&CJPID=4897915
 
 var configurations = {
       audible : { 
