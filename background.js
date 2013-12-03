@@ -23,16 +23,6 @@ var configurations = {
           { param: "source", paramValue: "cj_pfm" }
         ]
       },
-      bestbuy : {
-       rx: /^http.*?\.bestbuy\.com.*?site.*?\?id=/i, 
-       params: [
-         { param: "AID", paramValue: "10483113" },
-         { param: "PID", paramValue: "4897915" },
-         { param: "ref", paramValue: "39" },
-         { param: "CJPID", paramValue: "4897915" },
-         { param: "loc", paramValue: "01" }
-       ]
-      },
       thinkgeek : { 
         rx: /^http.*?\.thinkgeek\.com\/product\//i, 
         params: [
@@ -126,7 +116,6 @@ var configurations = {
    var site_urls = [ 
             "http://*.audible.com/*",
             "http://*.mint.com/*",
-            "http://*.bestbuy.com/site/*\?id=*",
             "http://*.thinkgeek.com/*",
             "http://*.newegg.com/Product/Product.aspx\?Item=*",
             "http://*.newegg.com/Special/ShellShocker.aspx\?*",

@@ -12,7 +12,6 @@
   "permissions": [  "webRequest", "webRequestBlocking", 
                       "*://*.audible.com/*",
                       "*://*.mint.com/*",
-                      "*://*.bestbuy.com/*",
                       "*://*.thinkgeek.com/*",
                       "*://*.newegg.com/*",
                       "*://*.newegg.ca/*",
